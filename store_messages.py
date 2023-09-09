@@ -1,5 +1,3 @@
-from connection import client
-
 
 class Node:
     def __init__(self, data):
@@ -44,24 +42,4 @@ class LinkedList:
 
 # Creating new instance of the LinkedList class
 linked_list_store_messages = LinkedList()
-
-# Everytime a user sends a message, it will be saved to a link list
-@client.event
-async def on_message(message):
-    # Prevent the message from a bot being saved
-    if message.author == client.user:
-        return
-
-    # Storing messages into a dictionary
-    dict_store_messages = {}
-    dict_store_messages[message.author] = message.content
-
-    # Used to show all messages that have been sent
-    # for key, value in dict_store_messages.items():
-    #     content = f'Sender: {key}, Message: {value}'
-    #     print(content)
-
-    linked_list_store_messages.append(message.content)
-    # linked_list_store_messages.display()
-
 

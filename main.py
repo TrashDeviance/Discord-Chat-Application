@@ -1,4 +1,3 @@
-from connection import *
 from commands import *
 from responses import *
 from store_messages import *

@@ -1,6 +1,7 @@
 import discord
 from connection import client, GUILD_ID
 from colorama import *
+from discord import FFmpegPCMAudio
 
 
 # Called when a Member joins a Guild.
@@ -86,3 +87,11 @@ async def on_member_update(before, after):
 @client.event
 async def on_member_ban(guild, user):
     pass
+
+# @client.event
+# async def play(client, url):
+#     channel = client.author.voice_channel
+#     voice_client = await channel.connect()
+#
+#     voice_client.play(FFmpegPCMAudio(url))
+
